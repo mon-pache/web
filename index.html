@@ -3,635 +3,185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mon‑Paché S.L.</title>
+<title>Mon‑Paché S.L. | Artesanía con alma compartida</title>
+<meta name="description" content="Mon‑Paché S.L., accesorios artesanales hechos a mano en Rincón de la Victoria, Málaga.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-font-family:'Inter',sans-serif;
-background:#fbf6ef;
-color:#3c2a21;
-overflow-x:hidden;
-}
-
-.container{
-width:min(1200px,92%);
-margin:auto;
-}
-
-header{
-position:fixed;
-top:0;
-width:100%;
-z-index:100;
-background:rgba(251,246,239,.9);
-backdrop-filter:blur(10px);
-border-bottom:1px solid #eadfce;
-}
-
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 0;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:14px;
-}
-
-.logo-circle{
-width:48px;
-height:48px;
-border-radius:50%;
-background:#b66f4f;
-display:grid;
-place-items:center;
-color:white;
-font-weight:700;
-font-size:1.1rem;
-box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
-
-.logo-text h1{
-font-size:1.2rem;
-font-family:'Playfair Display',serif;
-}
-
-.logo-text span{
-font-size:.72rem;
-letter-spacing:.18em;
-text-transform:uppercase;
-color:#8b6b58;
-}
-
-nav ul{
-display:flex;
-gap:32px;
-list-style:none;
-}
-
-nav a{
-text-decoration:none;
-color:#3c2a21;
-font-weight:600;
-transition:.25s;
-}
-
-nav a:hover{
-color:#b66f4f;
-}
-
-.hero{
-padding-top:150px;
-padding-bottom:110px;
-}
-
-.hero-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.badge{
-display:inline-block;
-padding:10px 18px;
-border-radius:999px;
-background:white;
-color:#b66f4f;
-font-size:.82rem;
-font-weight:700;
-letter-spacing:.12em;
-text-transform:uppercase;
-margin-bottom:26px;
-box-shadow:0 8px 18px rgba(0,0,0,.06);
-}
-
-.hero h2{
-font-family:'Playfair Display',serif;
-font-size:clamp(3rem,7vw,5.8rem);
-line-height:.95;
-margin-bottom:24px;
-}
-
-.hero p{
-font-size:1.08rem;
-line-height:1.9;
-color:#6e5649;
-margin-bottom:34px;
-}
-
-.buttons{
-display:flex;
-gap:18px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:15px 28px;
-border-radius:999px;
-font-weight:700;
-text-decoration:none;
-transition:.25s;
-}
-
-.btn-primary{
-background:#b66f4f;
-color:white;
-box-shadow:0 14px 30px rgba(182,111,79,.28);
-}
-
-.btn-secondary{
-border:1px solid #b66f4f;
-color:#b66f4f;
-background:white;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-}
-
-.hero-cards{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:18px;
-background:white;
-padding:22px;
-border-radius:36px;
-box-shadow:0 28px 60px rgba(0,0,0,.12);
-position:relative;
-}
-
-.hero-cards::before{
-content:'';
-position:absolute;
-inset:-30px;
-background:
-radial-gradient(circle at top left,#e8b79d 0,transparent 30%),
-radial-gradient(circle at bottom right,#d6c2a7 0,transparent 35%);
-z-index:-1;
-filter:blur(20px);
-opacity:.6;
-}
-
-.card{
-border-radius:28px;
-padding:28px;
-min-height:190px;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-}
-
-.card span{
-font-size:4rem;
-}
-
-.card strong{
-font-size:1.15rem;
-}
-
-.c1{background:#f0d9c8}
-.c2{background:#e8e0c9}
-.c3{background:#ead0bd}
-.c4{background:#f6e7dc}
-
-section{
-padding:90px 0;
-}
-
-.section-title{
-text-align:center;
-max-width:700px;
-margin:auto auto 60px;
-}
-
-.section-title small{
-display:block;
-letter-spacing:.18em;
-text-transform:uppercase;
-color:#b66f4f;
-font-weight:700;
-margin-bottom:14px;
-}
-
-.section-title h3{
-font-family:'Playfair Display',serif;
-font-size:3rem;
-margin-bottom:18px;
-}
-
-.section-title p{
-color:#6e5649;
-line-height:1.8;
-}
-
-.products{
-background:white;
-}
-
-.product-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:24px;
-}
-
-.product{
-padding:30px;
-border-radius:30px;
-background:#fff;
-border:1px solid #eadfce;
-box-shadow:0 12px 28px rgba(0,0,0,.06);
-transition:.25s;
-}
-
-.product:hover{
-transform:translateY(-6px);
-box-shadow:0 18px 40px rgba(0,0,0,.1);
-}
-
-.product-emoji{
-height:120px;
-display:grid;
-place-items:center;
-font-size:4rem;
-background:#fbf6ef;
-border-radius:22px;
-margin-bottom:24px;
-}
-
-.product h4{
-font-size:1.4rem;
-margin-bottom:14px;
-}
-
-.product p{
-color:#6e5649;
-line-height:1.8;
-}
-
-.values-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:24px;
-}
-
-.value{
-padding:28px;
-border-radius:28px;
-background:white;
-box-shadow:0 12px 30px rgba(0,0,0,.06);
-}
-
-.value-icon{
-width:58px;
-height:58px;
-border-radius:18px;
-display:grid;
-place-items:center;
-background:#b66f4f;
-color:white;
-font-size:1.6rem;
-margin-bottom:18px;
-}
-
-.value p{
-margin-top:10px;
-line-height:1.8;
-color:#6e5649;
-}
-
-.rsc{
-background:#3c2a21;
-color:white;
-}
-
-.rsc-grid{
-display:grid;
-grid-template-columns:1fr .8fr;
-gap:50px;
-align-items:center;
-}
-
-.rsc h3{
-font-family:'Playfair Display',serif;
-font-size:3.2rem;
-margin:14px 0 22px;
-}
-
-.rsc p{
-line-height:1.9;
-color:#f2dfd2;
-}
-
-.rsc-card{
-padding:36px;
-border-radius:32px;
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(8px);
-}
-
-.rsc-card .big{
-font-size:4rem;
-margin-bottom:18px;
-}
-
-.contact-box{
-display:grid;
-grid-template-columns:1fr .9fr;
-gap:40px;
-padding:42px;
-border-radius:38px;
-background:white;
-box-shadow:0 18px 40px rgba(0,0,0,.08);
-}
-
-.contact-list{
-list-style:none;
-display:grid;
-gap:18px;
-margin-top:28px;
-}
-
-.contact-list li{
-display:flex;
-gap:14px;
-align-items:center;
-color:#6e5649;
-}
-
-.contact-card{
-padding:34px;
-background:#fbf6ef;
-border-radius:28px;
-}
-
-.contact-card p{
-margin:18px 0 28px;
-line-height:1.8;
-color:#6e5649;
-}
-
-footer{
-padding:36px 0;
-text-align:center;
-border-top:1px solid #eadfce;
-color:#8b6b58;
-}
-
-@media(max-width:950px){
-.hero-grid,
-.rsc-grid,
-.contact-box,
-.product-grid,
-.values-grid{
-grid-template-columns:1fr;
-}
-
-.hero-cards{
-margin-top:20px;
-}
-
-nav ul{
-display:none;
-}
-}
-
-@media(max-width:600px){
-.hero h2{
-font-size:3.5rem;
-}
-
-.section-title h3{
-font-size:2.3rem;
-}
-
-.hero{
-padding-top:130px;
-}
-
-.buttons{
-flex-direction:column;
-}
-
-.btn{
-width:100%;
-text-align:center;
-}
-}
+body{font-family:'Inter',sans-serif;background:#fbf6ef;color:#3c2a21;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{width:min(1200px,92%);margin:auto}
+header{position:fixed;top:0;width:100%;z-index:100;background:rgba(251,246,239,.94);backdrop-filter:blur(12px);border-bottom:1px solid #eadfce}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logo{display:flex;align-items:center;gap:13px}
+.logo img{width:56px;height:56px;border-radius:50%;object-fit:cover;box-shadow:0 12px 26px rgba(60,42,33,.14)}
+.logo-text h1{font-size:1.28rem;font-family:'Playfair Display',serif;letter-spacing:.03em}
+.logo-text span{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#8b6b58}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{font-weight:700;font-size:.93rem;transition:.25s}
+nav a:hover{color:#b66f4f}
+.nav-btn{padding:12px 20px;border-radius:999px;background:#b66f4f;color:#fff;font-weight:800;box-shadow:0 12px 26px rgba(182,111,79,.25)}
+.hero{padding-top:145px;padding-bottom:95px;position:relative}
+.hero:before{content:'';position:absolute;right:-160px;top:120px;width:460px;height:460px;border-radius:50%;background:#e8b79d;filter:blur(110px);opacity:.35;z-index:-1}
+.hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
+.badge{display:inline-block;padding:10px 18px;border-radius:999px;background:white;color:#b66f4f;font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin-bottom:25px;box-shadow:0 8px 18px rgba(0,0,0,.06)}
+.hero h2{font-family:'Playfair Display',serif;font-size:clamp(3.1rem,7vw,5.9rem);line-height:.94;margin-bottom:23px}
+.hero p{font-size:1.08rem;line-height:1.9;color:#6e5649;margin-bottom:30px}
+.quote{font-family:'Playfair Display',serif;font-style:italic;color:#3c2a21!important;font-size:1.3rem!important;margin-bottom:34px!important}
+.buttons{display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-block;padding:15px 28px;border-radius:999px;font-weight:800;transition:.25s}
+.btn-primary{background:#b66f4f;color:white;box-shadow:0 14px 30px rgba(182,111,79,.28)}
+.btn-secondary{border:1px solid #b66f4f;color:#b66f4f;background:white}
+.btn:hover{transform:translateY(-3px)}
+.hero-photo{border-radius:42px;overflow:hidden;box-shadow:0 28px 70px rgba(60,42,33,.18);background:white;padding:14px;transform:rotate(1deg)}
+.hero-photo img{border-radius:32px;aspect-ratio:1/1;object-fit:cover}
+section{padding:90px 0}
+.section-title{text-align:center;max-width:760px;margin:auto auto 58px}
+.section-title small{display:block;letter-spacing:.2em;text-transform:uppercase;color:#b66f4f;font-weight:800;margin-bottom:14px}
+.section-title h3{font-family:'Playfair Display',serif;font-size:clamp(2.35rem,5vw,4rem);line-height:1;margin-bottom:18px}
+.section-title p{color:#6e5649;line-height:1.8}
+.products{background:white}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.product{padding:30px;border-radius:30px;background:#fff;border:1px solid #eadfce;box-shadow:0 12px 28px rgba(0,0,0,.06);transition:.25s}
+.product:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.1)}
+.product-emoji{height:110px;display:grid;place-items:center;font-size:3.6rem;background:#fbf6ef;border-radius:22px;margin-bottom:24px}
+.product h4{font-size:1.35rem;margin-bottom:14px}
+.product p{color:#6e5649;line-height:1.8}
+.gallery{background:#fbf6ef}
+.gallery-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:stretch}
+.featured{position:relative;border-radius:36px;overflow:hidden;box-shadow:0 20px 50px rgba(60,42,33,.14);min-height:560px}
+.featured img{width:100%;height:100%;object-fit:cover;transition:.35s}
+.gallery-side{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.gallery-card{position:relative;border-radius:30px;overflow:hidden;box-shadow:0 16px 36px rgba(60,42,33,.12);background:#fff;min-height:268px}
+.gallery-card img{width:100%;height:100%;object-fit:cover;transition:.35s}
+.gallery-card:hover img,.featured:hover img{transform:scale(1.035)}
+.gallery-caption{position:absolute;left:18px;right:18px;bottom:18px;padding:14px 16px;border-radius:20px;background:rgba(255,255,255,.86);backdrop-filter:blur(8px)}
+.gallery-caption strong{display:block;font-family:'Playfair Display',serif;font-size:1.15rem}
+.gallery-caption span{display:block;color:#6e5649;font-size:.9rem;margin-top:3px}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.value{padding:28px;border-radius:28px;background:white;box-shadow:0 12px 30px rgba(0,0,0,.06)}
+.value-icon{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:#b66f4f;color:white;font-size:1.6rem;margin-bottom:18px}
+.value p{margin-top:10px;line-height:1.8;color:#6e5649}
+.brand-section{background:white}
+.brand-box{display:grid;grid-template-columns:.8fr 1.2fr;gap:42px;align-items:center;padding:42px;border-radius:38px;background:#fbf6ef;box-shadow:0 18px 40px rgba(0,0,0,.08)}
+.brand-box img{width:100%;max-width:360px;border-radius:32px;box-shadow:0 16px 34px rgba(60,42,33,.1);margin:auto}
+.brand-box h3{font-family:'Playfair Display',serif;font-size:3rem;margin-bottom:18px}
+.brand-box p{line-height:1.9;color:#6e5649}
+.rsc{background:#3c2a21;color:white}
+.rsc-grid{display:grid;grid-template-columns:1fr .8fr;gap:50px;align-items:center}
+.rsc h3{font-family:'Playfair Display',serif;font-size:3.2rem;margin:14px 0 22px}
+.rsc p{line-height:1.9;color:#f2dfd2}
+.rsc-card{padding:36px;border-radius:32px;background:rgba(255,255,255,.08);backdrop-filter:blur(8px)}
+.rsc-card .big{font-size:4rem;margin-bottom:18px}
+.contact-box{display:grid;grid-template-columns:1fr .9fr;gap:40px;padding:42px;border-radius:38px;background:white;box-shadow:0 18px 40px rgba(0,0,0,.08)}
+.contact-list{list-style:none;display:grid;gap:18px;margin-top:28px}
+.contact-list li{display:flex;gap:14px;align-items:center;color:#6e5649}
+.contact-card{padding:34px;background:#fbf6ef;border-radius:28px}
+.contact-card p{margin:18px 0 28px;line-height:1.8;color:#6e5649}
+footer{padding:36px 0;text-align:center;border-top:1px solid #eadfce;color:#8b6b58}
+.footer-logo{display:flex;justify-content:center;margin-bottom:14px}
+.footer-logo img{width:86px;height:86px;border-radius:50%;object-fit:cover}
+@media(max-width:980px){.hero-grid,.gallery-grid,.rsc-grid,.contact-box,.product-grid,.values-grid,.brand-box{grid-template-columns:1fr}.gallery-side{grid-template-columns:1fr 1fr}nav ul,.nav-btn{display:none}.featured{min-height:420px}}
+@media(max-width:620px){.hero{padding-top:125px}.hero h2{font-size:3.25rem}.buttons{flex-direction:column}.btn{width:100%;text-align:center}.gallery-side{grid-template-columns:1fr}.section-title h3,.brand-box h3{font-size:2.3rem}.contact-box,.brand-box{padding:28px}.logo-text span{display:none}.logo img{width:50px;height:50px}}
 </style>
 </head>
-
 <body>
-
 <header>
 <div class="container nav">
-
-<div class="logo">
-<div class="logo-circle">MP</div>
-
-<div class="logo-text">
-<h1>Mon‑Paché</h1>
-<span>Accesorios artesanales</span>
-</div>
-</div>
-
-<nav>
-<ul>
-<li><a href="#productos">Productos</a></li>
-<li><a href="#valores">Valores</a></li>
-<li><a href="#rsc">RSC</a></li>
-<li><a href="#contacto">Contacto</a></li>
-</ul>
-</nav>
-
+<a class="logo" href="#inicio">
+<img src="assets/logo-mon-pache.jpg" alt="Logo Mon-Paché">
+<div class="logo-text"><h1>Mon‑Paché</h1><span>Accesorios artesanales</span></div>
+</a>
+<nav><ul><li><a href="#productos">Productos</a></li><li><a href="#galeria">Galería</a></li><li><a href="#marca">Marca</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
+<a class="nav-btn" href="#contacto">Comprar ahora</a>
 </div>
 </header>
 
-<section class="hero">
+<section class="hero" id="inicio">
 <div class="container hero-grid">
-
 <div>
 <div class="badge">Hecho a mano · Sostenible · Local</div>
-
 <h2>Accesorios artesanales con historia propia</h2>
-
-<p>
-En Mon‑Paché S.L. diseñamos complementos hechos a mano para personas que buscan productos originales, sostenibles y con personalidad.
-</p>
-
-<div class="buttons">
-<a class="btn btn-primary" href="#productos">Ver colección</a>
-<a class="btn btn-secondary" href="#contacto">Contactar</a>
+<p>En Mon‑Paché S.L. diseñamos complementos hechos a mano para personas que buscan productos originales, sostenibles y con personalidad.</p>
+<p class="quote">“Artesanía con alma compartida”</p>
+<div class="buttons"><a class="btn btn-primary" href="#galeria">Ver colección</a><a class="btn btn-secondary" href="#contacto">Contactar</a></div>
 </div>
-</div>
-
-<div class="hero-cards">
-
-<div class="card c1">
-<span>💍</span>
-<strong>Anillos únicos</strong>
-</div>
-
-<div class="card c2">
-<span>🌿</span>
-<strong>Diseño sostenible</strong>
-</div>
-
-<div class="card c3">
-<span>🧶</span>
-<strong>Hecho a mano</strong>
-</div>
-
-<div class="card c4">
-<span>🎁</span>
-<strong>Regalos especiales</strong>
-</div>
-
-</div>
+<div class="hero-photo"><img src="assets/anillo-resina-azul.jpg" alt="Anillo artesanal de resina azul Mon-Paché"></div>
 </div>
 </section>
 
 <section class="products" id="productos">
 <div class="container">
-
-<div class="section-title">
-<small>Nuestra colección</small>
-<h3>Complementos con esencia artesanal</h3>
-<p>Productos pensados para destacar por su diseño, calidad y elaboración cuidada.</p>
-</div>
-
+<div class="section-title"><small>Nuestra colección</small><h3>Complementos con esencia artesanal</h3><p>Productos pensados para destacar por su diseño, calidad y elaboración cuidada.</p></div>
 <div class="product-grid">
-
-<div class="product">
-<div class="product-emoji">✨</div>
-<h4>Pendientes artesanales</h4>
-<p>Diseños únicos hechos a mano para aportar color, estilo y personalidad.</p>
+<div class="product"><div class="product-emoji">✨</div><h4>Pendientes artesanales</h4><p>Diseños únicos hechos a mano para aportar color, estilo y personalidad.</p></div>
+<div class="product"><div class="product-emoji">💍</div><h4>Anillos y complementos</h4><p>Piezas originales para quienes buscan accesorios diferentes y especiales.</p></div>
+<div class="product"><div class="product-emoji">🌸</div><h4>Accesorios de resina</h4><p>Creaciones modernas con acabado artesanal y cuidada presentación.</p></div>
 </div>
-
-<div class="product">
-<div class="product-emoji">💍</div>
-<h4>Anillos y complementos</h4>
-<p>Piezas originales para quienes buscan accesorios diferentes y especiales.</p>
 </div>
+</section>
 
-<div class="product">
-<div class="product-emoji">🌸</div>
-<h4>Accesorios de resina</h4>
-<p>Creaciones modernas con acabado artesanal y cuidada presentación.</p>
+<section class="gallery" id="galeria">
+<div class="container">
+<div class="section-title"><small>Colección destacada</small><h3>Piezas creadas para brillar</h3><p>Una selección visual de nuestros accesorios de resina y complementos artesanales.</p></div>
+<div class="gallery-grid">
+<article class="featured"><img src="assets/pendientes-corazon-resina.jpg" alt="Pendientes de corazón de resina Mon-Paché"><div class="gallery-caption"><strong>Pendientes corazón</strong><span>Resina con detalles brillantes</span></div></article>
+<div class="gallery-side">
+<article class="gallery-card"><img src="assets/pinzas-resina-invierno.jpg" alt="Pinzas de resina de colores Mon-Paché"><div class="gallery-caption"><strong>Pinzas winter</strong><span>Edición colorida</span></div></article>
+<article class="gallery-card"><img src="assets/anillo-caja-mon-pache.jpg" alt="Anillo Mon-Paché en caja artesanal"><div class="gallery-caption"><strong>Anillo artesanal</strong><span>Presentación premium</span></div></article>
+<article class="gallery-card"><img src="assets/anillo-resina-azul.jpg" alt="Anillo azul de resina Mon-Paché"><div class="gallery-caption"><strong>Anillo azul</strong><span>Inspiración invierno</span></div></article>
+<article class="gallery-card"><img src="assets/pinzas-resina-invierno.jpg" alt="Colección de pinzas artesanales Mon-Paché"><div class="gallery-caption"><strong>Colección resina</strong><span>Accesorios únicos</span></div></article>
 </div>
+</div>
+</div>
+</section>
 
+<section class="brand-section" id="marca">
+<div class="container">
+<div class="brand-box">
+<img src="assets/logo-mon-pache.jpg" alt="Logo oficial Mon-Paché">
+<div>
+<div class="badge">Identidad de marca</div>
+<h3>Mon‑Paché</h3>
+<p>Una marca de complementos artesanales que une creatividad, cuidado por los detalles y compromiso con el comercio local. Nuestro lema, “Artesanía con alma compartida”, refleja la esencia de cada pieza: productos hechos con intención, cercanía y personalidad.</p>
+</div>
 </div>
 </div>
 </section>
 
 <section id="valores">
 <div class="container">
-
-<div class="section-title">
-<small>Nuestros valores</small>
-<h3>Una marca responsable y cercana</h3>
-</div>
-
+<div class="section-title"><small>Nuestros valores</small><h3>Una marca responsable y cercana</h3></div>
 <div class="values-grid">
-
-<div class="value">
-<div class="value-icon">🌿</div>
-<h4>Sostenibilidad</h4>
-<p>Apostamos por una producción responsable y un consumo más consciente.</p>
-</div>
-
-<div class="value">
-<div class="value-icon">✨</div>
-<h4>Originalidad</h4>
-<p>Cada accesorio se diseña con creatividad para que sea único.</p>
-</div>
-
-<div class="value">
-<div class="value-icon">🤝</div>
-<h4>Comercio local</h4>
-<p>Colaboramos con artesanos locales y apoyamos el comercio de proximidad.</p>
-</div>
-
+<div class="value"><div class="value-icon">🌿</div><h4>Sostenibilidad</h4><p>Apostamos por una producción responsable y un consumo más consciente.</p></div>
+<div class="value"><div class="value-icon">✨</div><h4>Originalidad</h4><p>Cada accesorio se diseña con creatividad para que sea único.</p></div>
+<div class="value"><div class="value-icon">🤝</div><h4>Comercio local</h4><p>Colaboramos con artesanos locales y apoyamos el comercio de proximidad.</p></div>
 </div>
 </div>
 </section>
 
 <section class="rsc" id="rsc">
 <div class="container rsc-grid">
-
-<div>
-<small style="letter-spacing:.18em;text-transform:uppercase;color:#e8b79d;font-weight:700;">
-Responsabilidad Social Corporativa
-</small>
-
-<h3>Manos con historia</h3>
-
-<p>
-Impulsamos talleres creativos con personas mayores para fomentar la integración,
-la creatividad y el bienestar emocional a través de la artesanía.
-</p>
-</div>
-
-<div class="rsc-card">
-<div class="big">🤲</div>
-<h4 style="font-size:1.5rem;margin-bottom:14px;">Arte, comunidad y bienestar</h4>
-<p>
-Una iniciativa social que conecta generaciones y refuerza nuestro compromiso con el entorno local.
-</p>
-</div>
-
+<div><small style="letter-spacing:.18em;text-transform:uppercase;color:#e8b79d;font-weight:800;">Responsabilidad Social Corporativa</small><h3>Manos con historia</h3><p>Impulsamos talleres creativos con personas mayores para fomentar la integración, la creatividad y el bienestar emocional a través de la artesanía.</p></div>
+<div class="rsc-card"><div class="big">🤲</div><h4 style="font-size:1.5rem;margin-bottom:14px;">Arte, comunidad y bienestar</h4><p>Una iniciativa social que conecta generaciones y refuerza nuestro compromiso con el entorno local.</p></div>
 </div>
 </section>
 
 <section id="contacto">
 <div class="container">
-
 <div class="contact-box">
-
 <div>
-<div class="section-title" style="text-align:left;margin-bottom:0;">
-<small>Visítanos</small>
-<h3>Mon‑Paché S.L.</h3>
+<div class="section-title" style="text-align:left;margin-bottom:0;"><small>Visítanos</small><h3>Mon‑Paché S.L.</h3></div>
+<ul class="contact-list"><li>📍 C/ Granada, 1 · Rincón de la Victoria · Málaga</li><li>🕒 Tienda física y venta online</li><li>📸 Instagram: @monpache</li><li>✉️ contacto@monpache.com</li></ul>
 </div>
-
-<ul class="contact-list">
-<li>📍 C/ Granada, 1 · Rincón de la Victoria · Málaga</li>
-<li>🕒 Tienda física y venta online</li>
-<li>📸 Instagram: @monpache</li>
-<li>✉️ contacto@monpache.com</li>
-</ul>
-</div>
-
-<div class="contact-card">
-<h4 style="font-size:1.7rem;">¿Buscas un complemento especial?</h4>
-
-<p>
-Contacta con nosotras y descubre piezas artesanales creadas con cariño,
-diseño y compromiso local.
-</p>
-
-<a href="mailto:contacto@monpache.com" class="btn btn-primary">
-Contactar
-</a>
-
-</div>
-
+<div class="contact-card"><h4 style="font-size:1.7rem;">¿Buscas un complemento especial?</h4><p>Contacta con nosotras y descubre piezas artesanales creadas con cariño, diseño y compromiso local.</p><a href="mailto:contacto@monpache.com" class="btn btn-primary">Contactar</a></div>
 </div>
 </div>
 </section>
 
-<footer>
-<div class="container">
-© 2026 Mon‑Paché S.L. · Complementos artesanales hechos a mano
-</div>
-</footer>
-
+<footer><div class="container"><div class="footer-logo"><img src="assets/logo-mon-pache.jpg" alt="Logo Mon-Paché"></div>© 2026 Mon‑Paché S.L. · Complementos artesanales hechos a mano</div></footer>
 </body>
 </html>
